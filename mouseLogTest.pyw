@@ -4,9 +4,9 @@ import logging
 # logging.basicConfig(filename="mouse_log.txt", level=logging.DEBUG, format="%(asctime)s: %(message)s")
 logging.basicConfig(filename="mouse_log.csv", level=logging.DEBUG, format="%(asctime)s,%(message)s")
 
-def on_move(x, y):
-    # logging.info("Mouse moved to ({0}, {1})".format(x, y))
-    logging.info("Move,{0},{1}".format(x, y))
+# def on_move(x, y):
+#     # logging.info("Mouse moved to ({0}, {1})".format(x, y))
+#     logging.info("Move,{0},{1}".format(x, y))
 
 # def on_click(x, y, button, pressed):
 #     if pressed:
@@ -21,5 +21,5 @@ def on_scroll(x, y, dx, dy):
 # with Listener(on_move=on_move, on_click=on_click, on_scroll=on_scroll) as listener:
 #     listener.join()
 
-with Listener(on_move=on_move, on_scroll=on_scroll) as listener:
+with Listener(on_scroll=on_scroll) as listener:
     listener.join()
