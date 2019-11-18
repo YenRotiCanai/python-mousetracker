@@ -1,8 +1,12 @@
 from pynput.mouse import Listener
 import logging
+from datetime import  datetime
 
+now = datetime.now()
+logTime = now.strftime("%m_%d %H_%M_%S")
 # logging.basicConfig(filename="mouse_log.txt", level=logging.DEBUG, format="%(asctime)s: %(message)s")
-logging.basicConfig(filename="mouse_log.csv", level=logging.DEBUG, format="%(asctime)s,%(message)s")
+fileName = str(logTime) + '.csv'
+logging.basicConfig(filename=fileName, level=logging.DEBUG, format="%(asctime)s,%(message)s")
 
 # def on_move(x, y):
 #     # logging.info("Mouse moved to ({0}, {1})".format(x, y))
